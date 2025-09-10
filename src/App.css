@@ -640,3 +640,102 @@
   -ms-overflow-style: none;  /* IE and Edge */
   scrollbar-width: none;  /* Firefox */
 }
+
+/* Responsive Styles */
+.Header-hamburger {
+  display: none; /* Hidden by default */
+  flex-direction: column;
+  justify-content: space-around;
+  width: 2rem;
+  height: 2rem;
+  background: transparent;
+  border: none;
+  cursor: pointer;
+  padding: 0;
+  z-index: 10;
+}
+
+.Header-hamburger:focus {
+  outline: none;
+}
+
+.Header-hamburger span {
+  width: 2rem;
+  height: 0.25rem;
+  background: var(--text-color);
+  border-radius: 10px;
+  transition: all 0.3s linear;
+  position: relative;
+  transform-origin: 1px;
+}
+
+/* Media Query for mobile */
+@media (max-width: 768px) {
+  .Header-nav {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    background: var(--background-color);
+    position: fixed;
+    top: 0;
+    right: -100%; /* Start off-screen */
+    height: 100vh;
+    width: 100%;
+    padding: 2rem;
+    transition: right 0.3s ease-in-out;
+    z-index: 5;
+  }
+
+  .Header-nav.is-open {
+    right: 0; /* Slide in */
+  }
+
+  .Header-nav a {
+    font-size: 1.5rem;
+    margin: 1.5rem 0;
+  }
+
+  .Header-hamburger {
+    display: flex;
+  }
+
+  .Hero {
+    padding: 80px 1.5rem 1.5rem 1.5rem;
+  }
+
+  .Hero-headline {
+    font-size: 2.5rem;
+  }
+
+  .Hero-subheadline {
+    font-size: 1.1rem;
+  }
+
+  /* Responsive styles for sections */
+  .Projects, .Pricing {
+    padding: 4rem 1.5rem;
+  }
+
+  .Projects-title, .Pricing-title {
+    font-size: 2rem;
+  }
+
+  /* Topics Section */
+  .ProjectCard-features {
+    grid-template-columns: 1fr; /* Stack features on mobile */
+  }
+
+  .ProjectCard-header {
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 0.5rem;
+  }
+
+  /* Team and Downloads Cards */
+  .TeamCard, .DownloadCard {
+    width: 100%;
+    max-width: 300px; /* Give a max-width on mobile */
+    margin: 0 auto; /* Center the cards */
+  }
+}
