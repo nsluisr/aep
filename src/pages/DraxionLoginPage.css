@@ -4,7 +4,8 @@
   display: flex;
   justify-content: center;
   align-items: center;
-  min-height: 100vh;
+  min-height: 100svh; /* Use small viewport height for better mobile handling */
+  padding: 1rem; /* Add some padding for smaller screens */
 }
 
 .LoginCard {
@@ -12,8 +13,8 @@
   border: 1px solid #333;
   border-radius: 10px;
   padding: 2.5rem;
-  width: 90%;
-  max-width: 400px; /* Keep the max width for larger screens */
+  width: 100%; /* Let padding control the size */
+  max-width: 400px;
   box-shadow: 0 20px 50px rgba(0, 0, 0, 0.5);
   text-align: center;
 }
@@ -56,12 +57,4 @@
   text-decoration: underline;
 }
 
-/* Media query for smaller screens */
-@media (max-width: 480px) {
-  .LoginCard {
-    width: 100%;
-    border-radius: 0;
-    border: none;
-    box-shadow: none;
-  }
-}
+/* No media query needed now as the padding on LoginPage handles spacing */
