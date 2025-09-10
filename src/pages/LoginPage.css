@@ -1,0 +1,36 @@
+
+.StandardLoginPage {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  min-height: calc(100vh - 80px); /* Adjust for header height */
+  padding: 2rem;
+}
+
+.StandardLoginCard {
+  background-color: #1E1E1E;
+  border: 1px solid #333;
+  border-radius: 10px;
+  padding: 2.5rem;
+  width: 100%;
+  max-width: 420px;
+  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.3);
+  text-align: center;
+}
+
+.StandardLoginCard-header {
+  margin-bottom: 2rem;
+}
+
+.StandardLoginCard-title {
+  font-size: 2rem;
+  font-weight: bold;
+  color: #FFFFFF;
+  margin: 0 0 0.5rem 0;
+}
+
+.StandardLoginCard-subtitle {
+  font-size: 1rem;
+  color: #C5C5C5;
+  margin: 0;
+}

@@ -1,0 +1,641 @@
+/* Custom Scrollbar */
+::-webkit-scrollbar {
+  width: 10px;
+}
+
+::-webkit-scrollbar-track {
+  background: var(--background-color);
+}
+
+::-webkit-scrollbar-thumb {
+  background-color: var(--primary-color);
+  border-radius: 20px;
+  border: 3px solid var(--background-color);
+}
+
+::-webkit-scrollbar-thumb:hover {
+  background-color: var(--accent-color);
+}
+
+/* Main App Container */
+.App {
+  position: relative; /* Needed for the pseudo-element background */
+}
+
+/* Static Gradient Mesh Background for the whole page */
+.App::before {
+  content: '';
+  position: fixed; /* Fixed position to stay in the background */
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100vh;
+  z-index: -1; /* Behind all content */
+  background-color: var(--background-color);
+  background-image: 
+    radial-gradient(ellipse 50% 40% at 20% 30%, rgba(142, 45, 226, 0.3), transparent),
+    radial-gradient(ellipse 50% 40% at 80% 60%, rgba(74, 0, 224, 0.3), transparent),
+    radial-gradient(ellipse 40% 30% at 50% 90%, rgba(255, 45, 85, 0.2), transparent);
+  filter: blur(80px);
+}
+
+
+/* Header Styles */
+.Header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 1rem 5%;
+  background-color: rgba(26, 26, 46, 0.6); /* Glassmorphism header */
+  border-bottom: 1px solid var(--border-color);
+  backdrop-filter: blur(10px);
+}
+
+.Header-logo {
+  font-size: 1.5rem;
+  font-weight: 700;
+  color: var(--text-color);
+  text-decoration: none;
+}
+
+.Header-nav a {
+  margin: 0 1rem;
+  text-decoration: none;
+  color: var(--text-color);
+  font-weight: 300;
+  transition: color 0.3s ease;
+}
+
+.Header-nav a:hover {
+  color: var(--accent-color);
+}
+
+.Header-login-btn {
+  background-image: linear-gradient(to right, var(--primary-color), var(--secondary-color));
+  color: white;
+  padding: 0.5rem 1rem;
+  border-radius: 24px; /* Softer corners */
+  transition: all 0.3s ease;
+  border: none;
+  background-size: 200% auto;
+}
+
+.Header-login-btn:hover {
+  background-position: right center;
+  color: white;
+  transform: scale(1.05);
+}
+
+.Hero-logo-container {
+  width: 220px;
+  height: 220px;
+  margin-bottom: 2.5rem;
+  position: relative;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  border-radius: 50%;
+  border: 6px solid transparent;
+  background-image: linear-gradient(var(--background-color), var(--background-color)), linear-gradient(135deg, var(--primary-color), var(--secondary-color));
+  background-origin: border-box;
+  background-clip: content-box, border-box;
+  box-shadow: 0 5px 15px rgba(0, 0, 0, 0.3);
+  transition: transform 0.4s cubic-bezier(0.25, 0.46, 0.45, 0.94);
+}
+
+.Hero-logo-container:hover {
+  /* No hover effect on the container */
+}
+
+.Hero-school-logo-img {
+  width: 100%;
+  height: 100%;
+  border-radius: 50%;
+  background-color: var(--surface-color);
+  padding: 10px;
+  box-shadow: inset 0 0 10px rgba(0,0,0,0.6);
+  position: relative;
+  z-index: 1;
+}
+
+/* Hero Section Styles */
+.Hero {
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  min-height: 100vh;
+  padding: 100px 2rem 2rem 2rem; /* Added padding-top */
+  text-align: center;
+}
+
+.Hero-headline, .Hero-subheadline, .Hero-cta {
+  position: relative;
+  z-index: 2;
+}
+
+.Hero-headline {
+  font-size: 3.5rem;
+  font-weight: 700;
+  margin: 0;
+  color: var(--text-color);
+}
+
+/* Animated Gradient Text */
+.animated-gradient-text {
+  background: linear-gradient(45deg, #E0C3FC, #8EC5FC, #8E2DE2, #4A00E0);
+  background-size: 300% 300%;
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  animation: gradient-animation 10s ease infinite;
+}
+
+@keyframes gradient-animation {
+  0% { background-position: 0% 50%; }
+  50% { background-position: 100% 50%; }
+  100% { background-position: 0% 50%; }
+}
+
+.Hero-subheadline {
+  font-size: 1.25rem;
+  font-weight: 300;
+  margin: 1rem 0 2rem 0;
+  max-width: 600px;
+  line-height: 1.6;
+  color: var(--text-color-secondary);
+}
+
+.Hero-cta {
+  padding: 0.8rem 2rem;
+  font-size: 1rem;
+  font-weight: 600;
+  color: #FFFFFF;
+  background-image: linear-gradient(to right, var(--primary-color), var(--secondary-color));
+  border: none;
+  border-radius: 24px; /* Softer corners */
+  cursor: pointer;
+  text-decoration: none;
+  transition: all 0.3s ease;
+  background-size: 200% auto;
+  box-shadow: 0 4px 15px rgba(0, 0, 0, 0.2);
+}
+
+.Hero-cta:hover {
+  transform: translateY(-3px);
+  background-position: right center;
+  box-shadow: 0 4px 20px rgba(142, 45, 226, 0.5);
+}
+
+/* General Section Styles */
+.Projects, .Pricing {
+  padding: 6rem 2rem;
+  position: relative;
+  z-index: 5;
+}
+
+.Projects-title, .Pricing-title {
+  font-size: 2.5rem;
+  font-weight: 600;
+  margin-bottom: 1rem;
+  text-align: center;
+}
+
+.Pricing-subtitle {
+  font-size: 1.1rem;
+  font-weight: 300;
+  margin-bottom: 4rem;
+  text-align: center;
+  color: var(--text-color-secondary);
+}
+
+/* Glassmorphism Card Styles */
+.ProjectCard, .TeamCard {
+  background-color: rgba(30, 30, 63, 0.6); /* Semi-transparent surface */
+  backdrop-filter: blur(12px);
+  -webkit-backdrop-filter: blur(12px);
+  border: 1px solid rgba(255, 255, 255, 0.1);
+  border-radius: 24px; /* Softer corners */
+  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.2);
+}
+
+.ProjectCard {
+  max-width: 800px;
+  margin: 0 auto;
+  padding: 2rem;
+  text-align: left;
+}
+
+.Technical-details {
+  max-width: 800px;
+  margin: 2rem auto 0 auto;
+  padding: 1.5rem;
+  text-align: center;
+  background-color: rgba(30, 30, 63, 0.6);
+  border: 1px solid rgba(255, 255, 255, 0.1);
+  border-radius: 24px;
+  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.2);
+}
+
+.Technical-details p {
+  font-size: 1rem;
+  line-height: 1.7;
+  margin-bottom: 0;
+}
+
+.ProjectCard-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 1rem;
+}
+
+.ProjectCard-name {
+  font-size: 2rem;
+  font-weight: 600;
+  color: var(--primary-color);
+  margin: 0;
+}
+
+.ProjectCard-status {
+  background-color: rgba(142, 45, 226, 0.15);
+  color: var(--primary-color);
+  padding: 0.3rem 0.8rem;
+  border-radius: 24px; /* Softer corners */
+  font-size: 0.8rem;
+  font-weight: 600;
+}
+
+.ProjectCard-description {
+  font-size: 1rem;
+  line-height: 1.7;
+  margin-bottom: 2rem;
+}
+
+.ProjectCard-features {
+  list-style: none;
+  padding: 0;
+  margin-bottom: 2rem;
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 1rem;
+}
+
+.ProjectCard-features li {
+  background-color: rgba(26, 26, 46, 0.7);
+  padding: 0.8rem;
+  border-radius: 12px; /* Softer corners */
+  border-left: 3px solid var(--primary-color);
+  display: flex;
+  align-items: center;
+  gap: 0.75rem;
+}
+
+.ProjectCard-features li span {
+  display: inline-block; /* Needed for transform */
+  transition: transform 0.2s ease;
+}
+
+.ProjectCard-actions {
+  display: flex;
+  justify-content: flex-end;
+  gap: 1rem;
+}
+
+.ProjectCard-btn-primary,
+.ProjectCard-btn-secondary {
+  padding: 0.7rem 1.5rem;
+  font-size: 0.9rem;
+  font-weight: 600;
+  border-radius: 24px; /* Softer corners */
+  cursor: pointer;
+  transition: all 0.3s ease;
+  border: 1px solid var(--primary-color);
+  text-decoration: none;
+}
+
+.ProjectCard-btn-primary {
+  background-image: linear-gradient(to right, var(--primary-color), var(--secondary-color));
+  color: white;
+  border: none;
+}
+
+.ProjectCard-btn-primary:hover {
+  background-position: right center;
+  transform: scale(1.05);
+}
+
+.ProjectCard-btn-secondary {
+  background-color: transparent;
+  color: var(--primary-color);
+}
+
+.ProjectCard-btn-secondary:hover {
+  background-color: rgba(142, 45, 226, 0.1);
+}
+
+.Pricing-table {
+  display: flex;
+  justify-content: center;
+  align-items: stretch;
+  gap: 2rem;
+  flex-wrap: wrap;
+}
+
+.perspective-container {
+  perspective: 1000px;
+}
+
+.TeamCard {
+  padding: 2rem;
+  width: 250px;
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  transition: all 0.3s ease;
+  transform-style: preserve-3d;
+  cursor: pointer;
+}
+
+.TeamCard:hover {
+  border-color: rgba(255, 255, 255, 0.3);
+}
+
+.TeamCard-avatar {
+  width: 100px;
+  height: 100px;
+  border-radius: 50%;
+  border: 3px solid var(--primary-color);
+  margin-bottom: 1rem;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  overflow: hidden;
+}
+
+.TeamCard-avatar img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+.TeamCard-avatar-icon {
+  font-size: 4rem;
+  color: var(--primary-color);
+}
+
+.TeamCard-name {
+  font-size: 1.5rem;
+  font-weight: 600;
+  margin-bottom: 0.25rem;
+}
+
+.TeamCard-role {
+  font-size: 1rem;
+  color: var(--text-color-secondary);
+  text-align: center;
+}
+
+/* Footer Styles */
+.Footer {
+  background-color: var(--surface-color);
+  color: var(--text-color-secondary);
+  padding: 2rem 5%;
+  text-align: center;
+  border-top: 1px solid var(--border-color);
+  margin-top: 4rem;
+  position: relative;
+  z-index: 5;
+}
+
+.Footer-social-dock {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 1rem; /* Initial gap */
+  margin-bottom: 1rem;
+  padding: 0.5rem;
+}
+
+.Footer-social-dock a {
+  color: var(--text-color);
+  text-decoration: none;
+  font-size: 1.8rem;
+  transition: color 0.3s ease;
+  display: inline-block; /* Needed for transform */
+}
+
+.Footer-social-dock a:hover {
+  color: var(--primary-color);
+}
+
+/* Download Card Styles */
+.DownloadCard {
+  background-color: rgba(30, 30, 63, 0.6);
+  backdrop-filter: blur(12px);
+  -webkit-backdrop-filter: blur(12px);
+  border: 1px solid rgba(255, 255, 255, 0.1);
+  border-radius: 24px;
+  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.2);
+  padding: 2.5rem 2rem;
+  width: 280px;
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: space-between;
+  text-align: center;
+  transition: all 0.3s ease;
+}
+
+.DownloadCard:hover {
+  transform: translateY(-5px);
+  border-color: var(--primary-color);
+}
+
+.DownloadCard-icon {
+  font-size: 5rem; /* Increased icon size */
+  margin-bottom: 1.5rem;
+  color: var(--text-color); /* Changed to neutral text color */
+  transition: color 0.3s ease;
+}
+
+.DownloadCard:hover .DownloadCard-icon {
+  color: var(--primary-color); /* Highlight icon on hover */
+}
+
+.DownloadCard-name {
+  font-size: 1.75rem;
+  font-weight: 600;
+  margin-bottom: 2rem;
+}
+
+.DownloadCard-button {
+  display: inline-block;
+  padding: 0.8rem 1.5rem;
+  font-size: 1rem;
+  font-weight: 600;
+  border-radius: 24px;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  text-decoration: none;
+  width: 100%;
+  background-image: linear-gradient(to right, var(--primary-color), var(--secondary-color));
+  color: white;
+  border: none;
+  background-size: 200% auto;
+  box-shadow: 0 4px 15px rgba(0, 0, 0, 0.2);
+}
+
+.DownloadCard-button:hover {
+  background-position: right center;
+  transform: scale(1.05);
+}
+
+.DownloadCard-button.disabled {
+  background-image: none;
+  background-color: rgba(255, 255, 255, 0.1);
+  color: var(--text-color-secondary);
+  cursor: not-allowed;
+  pointer-events: none;
+  box-shadow: none;
+}
+
+.DownloadCard-button.disabled:hover {
+  transform: none;
+}
+
+/* Modal Styles */
+.Modal-backdrop {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-color: rgba(10, 5, 20, 0.8);
+  backdrop-filter: blur(10px);
+  -webkit-backdrop-filter: blur(10px);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  z-index: 2000;
+  overflow-y: auto; /* Allow scrolling if modal content is too tall */
+  padding: 10vh 1rem; /* Add vertical padding to avoid header collision */
+}
+
+.Modal-content {
+  position: relative;
+  width: 90%;
+  max-width: 400px;
+  height: 80vh; /* Responsive height */
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-start; /* Align content to the top */
+  padding: 2.5rem;
+  text-align: center;
+  background-color: rgba(30, 30, 63, 0.8);
+  border: 1px solid rgba(255, 255, 255, 0.1);
+  border-radius: 24px;
+  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.3);
+  will-change: transform, opacity;
+  overflow-y: auto; /* Allow scrolling for overflowing content */
+  -ms-overflow-style: none;  /* IE and Edge */
+  scrollbar-width: none;  /* Firefox */
+}
+
+.Modal-content::-webkit-scrollbar {
+  display: none;
+}
+
+.Modal-close-btn {
+  position: absolute;
+  top: 1rem;
+  right: 1rem;
+  background: rgba(255, 255, 255, 0.1);
+  border: none;
+  border-radius: 50%;
+  width: 40px;
+  height: 40px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  color: var(--text-color);
+  font-size: 1.5rem;
+  cursor: pointer;
+  transition: all 0.3s ease;
+}
+
+.Modal-close-btn:hover {
+  background: rgba(255, 255, 255, 0.2);
+  transform: rotate(90deg);
+}
+
+.Modal-avatar {
+  width: 180px;
+  height: 180px;
+  border-radius: 50%;
+  border: 4px solid var(--primary-color);
+  margin: 0 auto 1.5rem auto;
+  overflow: hidden;
+  box-shadow: 0 5px 15px rgba(0, 0, 0, 0.3);
+  flex-shrink: 0; /* Prevent the avatar from shrinking */
+}
+
+.Modal-avatar img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+.Modal-name {
+  font-size: 2.2rem;
+  font-weight: 700;
+  margin-bottom: 0.5rem;
+  background: linear-gradient(45deg, var(--primary-color), var(--secondary-color));
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+}
+
+.Modal-role {
+  font-size: 1.1rem;
+  font-weight: 400;
+  color: var(--text-color-secondary);
+  margin-bottom: 2rem;
+}
+
+.Modal-bio {
+  font-size: 1rem;
+  line-height: 1.6;
+  color: var(--text-color);
+  margin-bottom: 2rem;
+}
+
+.Modal-github-link {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.5rem;
+  padding: 0.6rem 1.2rem;
+  background-color: rgba(255, 255, 255, 0.1);
+  border: 1px solid rgba(255, 255, 255, 0.2);
+  border-radius: 24px;
+  color: var(--text-color);
+  text-decoration: none;
+  transition: all 0.3s ease;
+}
+
+.Modal-github-link:hover {
+  background-color: rgba(255, 255, 255, 0.2);
+  color: white;
+  transform: translateY(-2px);
+}
+
+/* Hide scrollbar for Modal-backdrop */
+.Modal-backdrop::-webkit-scrollbar {
+  display: none;
+}
+
+.Modal-backdrop {
+  -ms-overflow-style: none;  /* IE and Edge */
+  scrollbar-width: none;  /* Firefox */
+}

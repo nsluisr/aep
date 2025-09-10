@@ -1,0 +1,67 @@
+/* DraxionLoginPage.css */
+
+.LoginPage {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  min-height: 100vh;
+}
+
+.LoginCard {
+  background-color: #1E1E1E;
+  border: 1px solid #333;
+  border-radius: 10px;
+  padding: 2.5rem;
+  width: 90%;
+  max-width: 400px; /* Keep the max width for larger screens */
+  box-shadow: 0 20px 50px rgba(0, 0, 0, 0.5);
+  text-align: center;
+}
+
+.LoginCard-header {
+  margin-bottom: 2rem;
+}
+
+.DraxionLogo {
+  font-size: 2.5rem;
+  font-weight: bold;
+  color: var(--primary-color);
+  margin-bottom: 0.5rem;
+}
+
+.LoginCard-title {
+  font-size: 1.2rem;
+  font-weight: 300;
+  color: #C5C5C5;
+  margin: 0;
+}
+
+.Login-form {
+  display: flex;
+  flex-direction: column;
+  align-items: stretch; /* Stretch items to fill the width */
+}
+
+.LoginCard-footer {
+  margin-top: 1.5rem;
+}
+
+.LoginCard-footer a {
+  color: var(--primary-color);
+  text-decoration: none;
+  font-size: 0.9rem;
+}
+
+.LoginCard-footer a:hover {
+  text-decoration: underline;
+}
+
+/* Media query for smaller screens */
+@media (max-width: 480px) {
+  .LoginCard {
+    width: 100%;
+    border-radius: 0;
+    border: none;
+    box-shadow: none;
+  }
+}
