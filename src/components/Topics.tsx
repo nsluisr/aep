@@ -1,5 +1,5 @@
 import React from 'react';
-import { motion } from 'framer-motion';
+import { motion, type Variants } from 'framer-motion';
 import { FaBook, FaCode, FaInfinity, FaRocket } from 'react-icons/fa';
 import content from '../content.json';
 
@@ -12,7 +12,7 @@ const iconMap: { [key: string]: React.ReactElement } = {
 
 const Topics: React.FC = () => {
   const { topics } = content;
-  const cardVariants = {
+  const cardVariants: Variants = {
     offscreen: { y: 50, opacity: 0 },
     onscreen: {
       y: 0,

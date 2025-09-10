@@ -1,4 +1,4 @@
-import React from 'react';
+
 import Hero from '../components/Hero';
 import Topics from '../components/Topics';
 import Team from '../components/Team';

@@ -1,6 +1,4 @@
 import React from 'react';
-import { motion } from 'framer-motion';
-import { FaFacebook, FaTwitter, FaGithub } from 'react-icons/fa';
 import content from '../content.json';
 
 const Footer: React.FC = () => {

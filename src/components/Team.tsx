@@ -1,5 +1,5 @@
 import React, { useState, useEffect } from 'react';
-import { motion, AnimatePresence } from 'framer-motion';
+import { motion, AnimatePresence, type Variants } from 'framer-motion';
 import content from '../content.json';
 import { FiGithub, FiX } from 'react-icons/fi';
 
@@ -33,7 +33,7 @@ const Team: React.FC = () => {
     };
   }, [selectedMember]);
 
-  const containerVariants = {
+  const containerVariants: Variants = {
     offscreen: { opacity: 0 },
     onscreen: {
       opacity: 1,
@@ -41,17 +41,17 @@ const Team: React.FC = () => {
     }
   };
 
-  const cardVariants = {
+  const cardVariants: Variants = {
     offscreen: { y: 50, opacity: 0 },
     onscreen: { y: 0, opacity: 1, transition: { type: "spring", bounce: 0.4, duration: 1 } }
   };
 
-  const modalBackdropVariants = {
+  const modalBackdropVariants: Variants = {
     hidden: { opacity: 0 },
     visible: { opacity: 1 }
   };
 
-  const modalContentVariants = {
+  const modalContentVariants: Variants = {
     hidden: { scale: 0.9, opacity: 0 },
     visible: { 
       scale: 1, 

@@ -1,5 +1,5 @@
 import React from 'react';
-import { motion } from 'framer-motion';
+import { motion, type Variants } from 'framer-motion';
 import content from '../content.json';
 import { FaWindows, FaAndroid, FaLinux } from 'react-icons/fa';
 
@@ -13,7 +13,7 @@ const OS_ICONS: { [key: string]: React.ElementType } = {
 const Downloads: React.FC = () => {
   const { downloads } = content;
 
-  const containerVariants = {
+  const containerVariants: Variants = {
     offscreen: { opacity: 0 },
     onscreen: {
       opacity: 1,
@@ -21,7 +21,7 @@ const Downloads: React.FC = () => {
     }
   };
 
-  const cardVariants = {
+  const cardVariants: Variants = {
     offscreen: { y: 50, opacity: 0 },
     onscreen: { y: 0, opacity: 1, transition: { type: "spring", bounce: 0.4, duration: 1 } }
   };
