@@ -698,6 +698,10 @@
     font-size: 1.5rem;
     margin: 1.5rem 0;
   }
+  .Header-nav .Header-login-btn {
+    padding: 0.8rem 1.6rem;
+    font-size: 1.5rem;
+  }
 
   .Header-hamburger {
     display: flex;
