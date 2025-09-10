@@ -82,19 +82,19 @@
         "name": "Windows",
         "icon": "windows",
         "status": "disponible",
-        "link": "#"
+        "link": "https://github.com/nsluisr/aep/releases/download/v1.0.0/RetoMental.exe"
       },
       {
         "name": "Android",
         "icon": "android",
         "status": "disponible",
-        "link": "#"
+        "link": "https://github.com/nsluisr/aep/releases/download/v1.0.0/RetoMental.apk"
       },
       {
         "name": "Linux",
         "icon": "linux",
-        "status": "pendiente",
-        "link": "#"
+        "status": "disponible",
+        "link": "https://github.com/nsluisr/aep/releases/download/v1.0.0/RetoMental.x86_64"
       }
     ]
   },
