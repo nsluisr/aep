@@ -26,49 +26,49 @@
       {
         "name": "Luis Soza",
         "role": "Líder de Proyecto & Desarrollador Backend",
-        "avatar": "/team/luis.png",
+        "avatar": "/team/Luis.jpeg",
         "bio": "El mayor engaño del mundo es creer que los humanos pueden salvarse.",
         "github": "https://github.com/nsluisr"
       },
       {
         "name": "Dania Cruz",
         "role": "Diseñadora UI/UX",
-        "avatar": "/team/dania.jpg",
+        "avatar": "/team/Dania.jpeg",
         "bio": "Enfocada en crear interfaces intuitivas y atractivas que ofrezcan la mejor experiencia de usuario. Creo que un buen diseño es la clave del éxito de un producto.",
         "github": "#"
       },
       {
         "name": "Maryeli Fernández",
         "role": "Desarrolladora Frontend",
-        "avatar": "/team/maryeli.jpg",
+        "avatar": "/team/maryeli.jpeg",
         "bio": "Especialista en dar vida a los diseños, construyendo interfaces interactivas y dinámicas. Disfruto trabajando con tecnologías web modernas para crear experiencias fluidas.",
         "github": "#"
       },
       {
         "name": "Sergio Cano",
         "role": "Colaborador",
-        "avatar": "/team/placeholder1.jpg",
+        "avatar": "/team/segio.jpeg",
         "bio": "Este espacio está reservado para un futuro miembro del equipo.",
         "github": "#"
       },
       {
         "name": "Anterling Meza",
         "role": "Colaborador",
-        "avatar": "/team/placeholder2.jpg",
+        "avatar": "/team/anterling.jpeg",
         "bio": "Este espacio está reservado para un futuro miembro del equipo.",
         "github": "#"
       },
       {
         "name": "Mariesling Chavarria",
         "role": "Colaborador",
-        "avatar": "/team/placeholder3.jpg",
-        "bio": "Este espacio está reservado para un futuro miembro del equipo.",
+        "avatar": "/team/mariesling.jpeg",
+        "bio": "Apasionada por las motos, especialmente la NS200.",
         "github": "#"
       },
       {
         "name": "Selena Soza",
         "role": "Colaborador",
-        "avatar": "/team/placeholder4.jpg",
+        "avatar": "/team/selena.jpeg",
         "bio": "Este espacio está reservado para un futuro miembro del equipo.",
         "github": "#"
       }
